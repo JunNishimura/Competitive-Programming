@@ -9,7 +9,7 @@
             "command": "g++",
             "args":[
                 "-g",
-                "./ALDS1/Chpater*/*.cpp"
+                "./ALDS1/Chapter*/*.cpp"
             ],
             "group": {
                 "kind": "build",
