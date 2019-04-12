@@ -1,6 +1,14 @@
-5 100
-p1 150
-p2 80
-p3 200
-p4 350
-p5 20
+21
+insert 1
+insert 2
+insert 3
+insert 4
+insert 5
+insert 6
+insert 7
+insert 8
+delete 5
+delete 7
+insert 9
+deleteLast
+deleteLast
