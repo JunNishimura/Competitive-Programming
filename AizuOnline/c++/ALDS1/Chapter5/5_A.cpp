@@ -1,28 +1,24 @@
 #include <iostream>
-#include <stdio.h>
 using namespace std;
 
-int A[25], n;
-
-bool Solve(int i, int m) 
+int n, q, A[201];
+bool exhaustiveSearch(int i, int t) 
 {
-    printf("Solve(%d, %d)\n", i, m);
-    if (m == 0) return true;
-    if (i == n) return false;
-    int res = Solve(i+1, m) || Solve(i+1, m-A[i]);
-    return res;
+    if (t == 0) return 1;
+    if (i >= n) return 0;
+    return exhaustiveSearch(i+1, t) || exhaustiveSearch(i+1, t-A[i]);
 }
 
-int main() {
-    int q, t;
+int main() 
+{
     scanf("%d", &n);
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &A[i]);
-    } 
+    for (int i = 0; i < n; i++) scanf("%d", &A[i]);
     scanf("%d", &q);
-    for (int i = 0; i < q; i++) {
-        scanf("%d", &t);
-        if (Solve(0, t)) printf("yes\n");
+    for (int i = 0; i < q; i++) 
+    {
+        int k = 0;
+        scanf("%d", &k);
+        if (exhaustiveSearch(0, k)) printf("yes\n");
         else printf("no\n");
     }
 }
