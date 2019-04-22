@@ -2,6 +2,11 @@
     "files.associations": {
         "iostream": "cpp",
         "__config": "cpp",
-        "__nullptr": "cpp"
+        "__nullptr": "cpp",
+        "list": "cpp",
+        "stack": "cpp",
+        "utility": "cpp",
+        "queue": "cpp",
+        "istream": "cpp"
     }
 }
