@@ -1,4 +1,4 @@
 a, n, m = map(int, input().split())
+l = len(str(m))
 
-for i in (m, 0, -1):
-    
+
