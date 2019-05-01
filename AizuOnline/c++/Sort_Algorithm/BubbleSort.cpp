@@ -2,18 +2,14 @@
 #define MAX 100
 using namespace std;
 
-void SelectionSort(int* A, int n) 
+void BubbleSort(int A[], int n)
 {
     for (int i = 0; i < n-1; ++i) 
     {
-        int min = i;
-        for (int j = i+1; j < n; ++j) 
+        for (int j = n-1; i < j; --j) 
         {
-            // find minimum value in the array
-            if (A[j] < A[min]) min = j;
+            if (A[j] < A[j-1]) swap(A[j], A[j-1]);
         }
-        // swap elements
-        swap(A[min], A[i]);
     }
 }
 
@@ -23,7 +19,7 @@ int main()
     scanf("%d", &n);
     for (int i = 0; i < n; ++i) scanf("%d", &A[i]);
     // execute selection sort
-    SelectionSort(A, n);
+    BubbleSort(A, n);
     // show sorted array
     for (int i = 0; i < n; ++i) printf("%d ", A[i]);
     printf("\n");
