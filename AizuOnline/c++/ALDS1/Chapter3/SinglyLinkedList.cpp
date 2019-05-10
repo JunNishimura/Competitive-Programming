@@ -49,7 +49,7 @@ bool Checker(Node **pointerToHead, int index, const char *order)
 
 Node* Insert(Node* _head, int _data) 
 {
-    Node *temp = new Node();
+    Node *temp = new Node;
     temp->data = _data;
     temp->next = _head;
     _head = temp;
