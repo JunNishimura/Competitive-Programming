@@ -1,26 +1,33 @@
-#include <iostream>
-#define MAX 100
+#include <iostream> 
 using namespace std;
 
-void BubbleSort(int A[], int n)
-{
-    for (int i = 0; i < n-1; ++i) 
+int swap_count = 0;
+
+void BubbleSort(int array[], int num)
+{ 
+    for (int i = 0; i < num; ++i)
     {
-        for (int j = n-1; i < j; --j) 
+        for (int j=num-1; j > i; --j) 
         {
-            if (A[j] < A[j-1]) swap(A[j], A[j-1]);
+            if (array[j-1] > array[j]) 
+            {
+                swap(array[j-1], array[j]);
+                ++swap_count;
+            }
         }
     }
 }
 
 int main() 
 {
-    int n, A[MAX];
-    scanf("%d", &n);
-    for (int i = 0; i < n; ++i) scanf("%d", &A[i]);
-    // execute selection sort
-    BubbleSort(A, n);
-    // show sorted array
-    for (int i = 0; i < n; ++i) printf("%d ", A[i]);
-    printf("\n");
+    // int array[] = {3,4,1,5,6,8,2,10,9,7};
+    int array[] = {10,9,8,7,6,5,4,3,2,1}; // worst case 
+
+    BubbleSort(array, 10);
+    for (int i = 0; i < 10; ++i) 
+    {
+        cout << array[i] << ' ';
+    }
+    cout << endl;
+    cout << "swap count : " << swap_count << endl;
 }
