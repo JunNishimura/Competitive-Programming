@@ -1,6 +1,5 @@
 #include <iostream> 
 using namespace std;
-
 int swap_count = 0;
 
 void SelectionSort(int array[], int num)
