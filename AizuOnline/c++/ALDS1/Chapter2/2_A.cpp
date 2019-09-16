@@ -1,32 +1,43 @@
-#include <iostream>
+#include <iostream> 
 using namespace std;
 
-int main()
+int A[101];
+int n;
+
+void Show_array() 
 {
-    int n, A[101];
-    scanf("%d", &n);
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; ++i) 
     {
-        scanf("%d", &A[i]);
+        if (i) cout << " ";
+        cout << A[i];
     }
-    int i, j = 0, c = 0;
-    while (j != n-1)
+    cout << endl;
+}
+
+void SWAP(int i, int j) 
+{
+    int t = A[i];
+    A[i] = A[j];
+    A[j] = t;
+}
+
+void Bubble_Sort() 
+{
+    for (int i = 0; i < n-1; ++i)
     {
-        i = n-1;
-        while (i > j)
+        for (int j = n-1; j > i; j--) 
         {
-            if (A[i] < A[i-1]) 
-            {
-                 swap(A[i], A[i-1]);
-                 c++;
-            }
-            i--;
+            if (A[j] < A[j-1]) SWAP(j, j-1);
         }
-        j++;
+        Show_array();
     }
-    for (int i = 0; i < n; i++)
-    {
-        if (i==n-1) printf("%d\n%d\n", A[i], c);
-        else printf("%d ", A[i]);
-    }
+}
+
+int main() 
+{
+    cin >> n;
+    for (int i = 0; i < n; ++i) cin >> A[i];
+
+    Show_array();
+    Bubble_Sort();
 }
