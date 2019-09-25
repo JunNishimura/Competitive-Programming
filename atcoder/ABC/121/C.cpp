@@ -11,7 +11,6 @@ int main()
     for (int i = 0; i < N; i++) cin >> v[i].first >> v[i].second;
     sort(v.begin(), v.end());
 
-
     for (int i = 0; i < N; i++) 
     {
         if ( M <= 0 ) break;
